@@ -1322,7 +1322,8 @@ int usb_storage_probe(struct usb_device *dev, unsigned int ifnum,
 	/* let's examine the device now */
 	iface = &dev->config.if_desc[ifnum];
 
-	if (dev->descriptor.bDeviceClass != 0 ||
+	if ((dev->descriptor.bDeviceClass != 0 && dev->descriptor.bDeviceClass
+				!= USB_CLASS_MISC) ||
 			iface->desc.bInterfaceClass != USB_CLASS_MASS_STORAGE ||
 			iface->desc.bInterfaceSubClass < US_SC_MIN ||
 			iface->desc.bInterfaceSubClass > US_SC_MAX) {

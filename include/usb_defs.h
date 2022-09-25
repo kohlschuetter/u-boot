@@ -19,6 +19,7 @@
 #define USB_CLASS_MASS_STORAGE   8
 #define USB_CLASS_HUB            9
 #define USB_CLASS_DATA           10
+#define USB_CLASS_MISC           0xef
 #define USB_CLASS_VENDOR_SPEC    0xff
 
 /* some HID sub classes */
